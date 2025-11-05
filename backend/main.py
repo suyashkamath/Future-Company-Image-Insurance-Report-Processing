@@ -236,6 +236,19 @@ For each row, create TWO records: one Comp, one TP.
 
 Return ONLY the JSON array. No explanations.
 
+There is a one more example :
+Here, in this example 
+KS
+Krunal Sir Probus
+PO- 75%
+Segment - School Bus - on the name of School.
+RTO - All open RTOs
+Future Generali
+Wef 23rd Jan.
+12:23
+
+The Segment and RTOs are given 
+Means it is not necessary that the input data should be in the tabular format , it can be in the form of text too 
 
 
 Return ONLY JSON array, no markdown.
@@ -300,14 +313,14 @@ def determine_lob(segment: str) -> str:
     """Determine LOB from segment"""
     segment_upper = segment.upper()
     
-    if any(kw in segment_upper for kw in ['TW', '2W', 'MC', 'SC', '1+5']):
+    if 'BUS' in segment_upper:
+        return "BUS"
+    elif any(kw in segment_upper for kw in ['TW', '2W', 'MC', 'SC', '1+5']):
         return "TW"
     elif any(kw in segment_upper for kw in ['PVT CAR', 'CAR', 'PCI']):
         return "PVT CAR"
     elif any(kw in segment_upper for kw in ['CV', 'GVW', 'PCV', 'GCV']):
         return "CV"
-    elif 'BUS' in segment_upper:
-        return "BUS"
     elif 'TAXI' in segment_upper:
         return "TAXI"
     elif any(kw in segment_upper for kw in ['MISD', 'TRACTOR']):
