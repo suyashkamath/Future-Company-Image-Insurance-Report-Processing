@@ -185,6 +185,9 @@ CRITICAL RULES:
 - NEVER use raw names like "2W" in segment
 - Handle negative % as positive
 
+Note: Remember one thing , Package means COMP policy type
+      If Policy Type is not mentioned then please consider it as Comp/TP
+
 I will describe you the input how it is given , sometimes text are given , sometimes table is given in image. Extract data accordingly.
 so here is the description of input image:
 Weight , FGI STATE, FGI ZONE , OD out flow , TP Outflow- Total CV Premium Greater than 2L and atlast remark column is given.
@@ -236,7 +239,7 @@ For each row, create TWO records: one Comp, one TP.
 
 Return ONLY the JSON array. No explanations.
 
-There is a one more example :
+Example 2: There is a one more example :
 Here, in this example 
 KS
 Krunal Sir Probus
@@ -250,6 +253,7 @@ Wef 23rd Jan.
 The Segment and RTOs are given 
 Means it is not necessary that the input data should be in the tabular format , it can be in the form of text too 
 
+Hey , you intelligently extract the text please m and please give me the respective output, I just told/ informed you how the data is given as an input
 
 Return ONLY JSON array, no markdown.
 """
